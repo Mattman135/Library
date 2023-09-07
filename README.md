@@ -28,5 +28,6 @@ Future extensions
 ToDo list
 - https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6
 - https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 
-- 
+- https://www.sliderrevolution.com/resources/css-animations-on-scroll/
