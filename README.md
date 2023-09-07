@@ -8,6 +8,9 @@
 - Bottom should include link to my github
 - There should be an book icon on the tab
 
+Svg image
+- https://smashicons.com/
+
 
 Future extensions
 - Add to container with books I have read and with books I want to read
@@ -17,6 +20,7 @@ Future extensions
 - The right part of the header should be an image of a bookworm. How does it work with copyright in this case? Can I create my own images (svg, paint-programs etc)? Where does the line go If my image is to similar to somebody else's?
 - Make it work for smartphone
 - Include a search engine that searches for books or for example recept. For example if you write bacon all the recept with bacon included will pop up. If you write james bond, james bond books till apppear.
+- You should be able to upload a picture of the book cover.
 
 
 
