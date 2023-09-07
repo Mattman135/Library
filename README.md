@@ -23,5 +23,6 @@ Future extensions
 
 ToDo list
 - https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6
-- The link above is for the scroll animation in the container book div
 - https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin
+
+- 
