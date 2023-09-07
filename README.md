@@ -16,6 +16,7 @@ Future extensions
 - Have a log in button where you can create an own account/library where you have all your books saved. This will probably make use of some kind of database (bear in mind while Im writing this I have yet no experience working with database's)
 - The right part of the header should be an image of a bookworm. How does it work with copyright in this case? Can I create my own images (svg, paint-programs etc)? Where does the line go If my image is to similar to somebody else's?
 - Make it work for smartphone
+- Include a search engine that searches for books or for example recept. For example if you write bacon all the recept with bacon included will pop up. If you write james bond, james bond books till apppear.
 
 
 
@@ -23,3 +24,4 @@ Future extensions
 ToDo list
 - https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6
 - The link above is for the scroll animation in the container book div
+- https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin

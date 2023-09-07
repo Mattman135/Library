@@ -84,20 +84,39 @@
 }
 
 /*scroll div*/
+
+
 .container_books {
     display: flex;
-    flex-direction: column;
+    overflow: auto;
+    outline: 1px dashed lightgray;
+    flex: none;
     align-items: center;
-    overflow-y: auto;
-    gap: 20px;
-    scroll-margin: 20px;
-    padding: 20px 0;
+    gap: 32px;
+    padding: 20px;
 }
 
-.card {
-    border: 1px dashed black;
-    width: 250px;
-    height: 500px;
-    flex: 0 0 auto;
+.container_books.y {
+    flex-flow: column nowrap;
+}
+
+.y.mandatory-scroll-snapping {
+    scroll-snap-type: y mandatory;
+}
+
+.container_books > div {
     text-align: center;
+    scroll-snap-align: center;
+    flex: none;
+    outline: 1px dashed black;
+    justify-content: center;
+}
+
+.container_books > div {
+    width: 250px;
+    height: 100%;
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
