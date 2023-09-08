@@ -31,3 +31,8 @@ ToDo list
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 
 - https://www.sliderrevolution.com/resources/css-animations-on-scroll/
+
+- https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/
+
+- Create a form that uses JS where I can fill in the form and when I click add it adds to my data object variable and displays it in a grid
+- Create a modal where the form is in

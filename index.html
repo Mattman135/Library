@@ -8,6 +8,30 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="divForm">
+            <h1>Form</h1>
+            <form action="#" id="submitBookForm">
+
+                <div class="input">
+                    <input type="text" id="inputAuthor" placeholder="Enter author">
+                    <input type="text" id="inputTitle" placeholder="Enter title">
+                    <input type="number" min="1" id="inputPages" placeholder="Enter number of pages">
+                </div>
+
+                <label class="readOrNotBtn">Have you read it?
+                    <input type="checkbox" id="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="right">
+            <h1>Output</h1>
+            <div class="container_books" id="container_books">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

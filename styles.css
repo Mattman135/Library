@@ -1,0 +1,43 @@
+.container {
+    height: 100vh;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container div {
+    border: 1px dashed black;
+    width: 30vw;
+}
+
+.divForm {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.divForm h1 {
+    align-self: center;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.right.container_books {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.books {
+    width: 100px;
+    height: 100px;
+}
