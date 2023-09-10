@@ -16,18 +16,12 @@ function Book(author, title, pages, read) {
 }
 
 function addBookToLibrary(author, title, pages, read) {
-    myLibrary.push(new Book(author, title, pages, read));
-    displayBooks(author, title, pages, read);
+    let book = new Book(author, title, pages, read);
+    myLibrary.push(book);
+    displayBook(book);
 }
 
-function displayBooks(author, title, pages, read) {
-    for (let i = 0; i < myLibrary.length; i++) {
-        let div = document.createElement("div");
-        div.classList.add("books");
-        div.textContent = `${author} , ${title}, ${pages}`;
-        containerBooks.appendChild(div);
-    }
-}
+
 
 submitBookForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -37,3 +31,33 @@ submitBookForm.addEventListener("submit", (e) => {
     let read = inputCheckbox.checked;
     addBookToLibrary(author, title, pages, read);
 })
+
+
+function displayBook(book) {
+    let divBook = document.createElement("div");
+    divBook.classList.add("book");
+
+    let p1 = document.createElement("p")
+    let p2 = document.createElement("p")
+    let p3 = document.createElement("p")
+    let p4 = document.createElement("p")
+
+    p1.textContent = book.author;
+    p2.textContent = book.title;
+    p3.textContent = book.pages;
+
+    if (book.read) {
+        p4.textContent = "Read";
+        p4.classList.add("read");
+    } else {
+        p4.textContent = "Not Read";
+        p4.classList.add("notRead");
+    }
+
+    divBook.appendChild(p1);
+    divBook.appendChild(p2);
+    divBook.appendChild(p3);
+    divBook.appendChild(p4);
+
+    containerBooks.appendChild(divBook);
+}
