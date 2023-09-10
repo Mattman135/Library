@@ -8,8 +8,12 @@
 - Bottom should include link to my github
 - There should be an book icon on the tab
 
-Svg image
-- https://smashicons.com/
+
+
+Credit
+
+- Svg image: https://smashicons.com/
+- Modal - Victor Eke - FreeCodeCamp - https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/
 
 
 Future extensions
