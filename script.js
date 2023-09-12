@@ -6,7 +6,7 @@ const inputCheckbox = document.getElementById("checkbox");
 const submitBookForm = document.getElementById("submitBookForm");
 const containerBooks = document.getElementById("container_books")
 
-const myLibrary = [];
+var myLibrary = [];
 
 function Book(author, title, pages, read) {
     this.author = author;
@@ -18,10 +18,8 @@ function Book(author, title, pages, read) {
 function addBookToLibrary(author, title, pages, read) {
     let book = new Book(author, title, pages, read);
     myLibrary.push(book);
-    displayBook(book);
+    displayBooks();
 }
-
-
 
 submitBookForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -32,34 +30,42 @@ submitBookForm.addEventListener("submit", (e) => {
     addBookToLibrary(author, title, pages, read);
 })
 
+function displayBooks() {
+    removeAllChildNodes(containerBooks);
+    for (let i = 0; i < myLibrary.length; i++) {
+        let div = document.createElement("div");
+        div.innerHTML = `${myLibrary[i].author}, ${myLibrary[i].title}, ${myLibrary[i].pages} ,i=${i}`;
+        div.dataset.index = i;
+        div.setAttribute("class", "book");
 
-function displayBook(book) {
-    let divBook = document.createElement("div");
-    divBook.classList.add("book");
+        let btnRemove = document.createElement("button");
+        btnRemove.innerHTML = "Remove";
 
-    let p1 = document.createElement("p")
-    let p2 = document.createElement("p")
-    let p3 = document.createElement("p")
-    let p4 = document.createElement("p")
+        btnRemove.addEventListener("click", (e) => {
+            myLibrary = removeBook(i);
+            console.log(i);
+            displayBooks();
+        })
 
-    p1.textContent = book.author;
-    p2.textContent = book.title;
-    p3.textContent = book.pages;
-
-    if (book.read) {
-        p4.textContent = "Read";
-        p4.classList.add("read");
-    } else {
-        p4.textContent = "Not Read";
-        p4.classList.add("notRead");
+        div.appendChild(btnRemove);
+        containerBooks.appendChild(div);
     }
+}
 
-    divBook.appendChild(p1);
-    divBook.appendChild(p2);
-    divBook.appendChild(p3);
-    divBook.appendChild(p4);
+function removeBook(index) {
+    let ret = [];
+    for (let i = 0; i < myLibrary.length; i++) {
+        if (i !== index) {
+            ret.push(myLibrary[i]);
+        }
+    }
+    return ret;
+}
 
-    containerBooks.appendChild(divBook);
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
 
 // modal
