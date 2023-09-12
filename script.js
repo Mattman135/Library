@@ -38,6 +38,7 @@ function displayBooks() {
         div.dataset.index = i;
         div.setAttribute("class", "book");
 
+        // remove button
         let btnRemove = document.createElement("button");
         btnRemove.innerHTML = "Remove";
 
@@ -48,6 +49,34 @@ function displayBooks() {
         })
 
         div.appendChild(btnRemove);
+
+        // read or not button
+        let readBtn = document.createElement("button");
+        
+        let read = myLibrary[i].read;
+
+        if (read) {
+            readBtn.innerHTML = "Read";
+            readBtn.setAttribute("class", "read");
+        } else {
+            readBtn.innerHTML = "Not read";
+            readBtn.setAttribute("class", "notRead");
+        }
+
+        readBtn.addEventListener("click", (e) => {
+            if (readBtn.innerHTML === "Read") { // if this is read it means read property is true
+                console.log(readBtn.innerHTML);
+                console.log(e);
+                readBtn.innerHTML = "Not read";
+                readBtn.setAttribute("class", "notRead");
+            } else if (readBtn.innerHTML === "Not read") {
+                readBtn.innerHTML = "Read";
+                readBtn.setAttribute("class", "read");
+            }
+        })
+
+        div.appendChild(readBtn);
+
         containerBooks.appendChild(div);
     }
 }

@@ -63,6 +63,7 @@ form {
     background-color: grey;
     border-radius: 16px;
     margin: auto auto;
+    gap: 12px;
 }
 
 .read {
