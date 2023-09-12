@@ -13,7 +13,8 @@
 Credit
 
 - Svg image: https://smashicons.com/
-- Modal - Victor Eke - FreeCodeCamp - https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/
+- Modal: - Victor Eke - FreeCodeCamp - https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/
+- Icon: MD Badsha Meah - https://freeicons.io/profile/3335
 
 
 Future extensions
