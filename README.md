@@ -27,16 +27,3 @@ Future extensions
 - Include a search engine that searches for books or for example recept. For example if you write bacon all the recept with bacon included will pop up. If you write james bond, james bond books till apppear.
 - You should be able to upload a picture of the book cover.
 
-
-
-
-ToDo list
-- https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6
-- https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin
-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
-
-- https://www.sliderrevolution.com/resources/css-animations-on-scroll/
-
-- https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/
-
-- Create a modal where the form is in

@@ -10,10 +10,13 @@
 </head>
 <body>
     <div class="container">
+
+        <div class="header">
+            <h1>My Library</h1>
+            <a href="https://mattman135.github.io/Library/"><img src="book-stack.png" alt=""></a>
+        </div>
+
         <div class="divForm">
-
-            <h1>Form</h1>
-
             <section class="modal hidden">
                 <button type="button" class="btn-close">⨉</button>
                 <form action="#" id="submitBookForm">
@@ -26,19 +29,24 @@
                         <input type="checkbox" id="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="submitBtn">Submit</button>
                 </form>
             </section>
-
             <div class="overlay hidden"></div>
-            <button type="button" class="btn btn-open">Open Modal</button>
-
+            <button type="button" class="btn btn-open">+ Add Book</button>
         </div>
-        <div class="right">
-            <h1>Output</h1>
+
+        <div class="main_content">
             <div class="container_books" id="container_books">
             </div>
         </div>
+        
+        <div class="footer">© 2023 Mattman135 
+            <a href="https://github.com/Mattman135/Library">
+                <img src="github-mark.png" alt="github-logo">
+            </a>
+        </div>
+
     </div>
 </body>
 </html>

@@ -1,3 +1,12 @@
+:root {
+    --header-background-color: #f9fafb;
+    --main-background-color: #d1d5db;
+    --text-color: #030712;
+    --text-style: 'Baskerville', monospace;
+    --inset-color: #030712;
+    --btn-modal-color: #32CD32;
+}
+
 *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -6,21 +15,32 @@
 
 body {
     position: relative;
+    font-family: var(--text-style);
 }
 
 .container {
     height: 100vh;
-    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr 10fr .5fr;
+}
+
+.divForm, .main_content {
+    background-color: var(--main-background-color);
+}
+
+.header {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-around;
+    background-color: var(--header-background-color);
+    grid-row: 1 / 2;
 }
 
-.divForm, .right {
-    border: 1px dashed black;
-    width: 30vw;
+.header img {
+    width: 50px;
+    height: 50px;
 }
-
 
 /*form*/
 .divForm {
@@ -28,6 +48,7 @@ body {
     flex-direction: column;
     align-items: start;
     gap: 20px;
+    grid-row: 2 / 3;
 }
 
 form {
@@ -46,11 +67,20 @@ form {
 }
 
 /*container with books*/
+.main_content {
+    display: grid;
+    overflow: hidden;
+    align-content: flex-start;
+    grid-row: 3 / 4;
+    padding: 12px;
+}
 
 .container_books {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
+    overflow-y: scroll;
+    grid-row: 3 / 4;
 }
 
 .book {
@@ -58,12 +88,24 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25vw;
-    height: 15vh;
-    background-color: grey;
+    width: 400px;
+    height: 125px;
+    background-color: var(--header-background-color);
     border-radius: 16px;
-    margin: auto auto;
+    margin: 20px auto;
+    padding: 12px;
     gap: 12px;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.book button {
+    padding: 4px 16px;
+    border-radius: 8px;
+    color: black;
+}
+
+.book .removeBtn {
+    background-color: var(--main-background-color);
 }
 
 .read {
@@ -81,6 +123,8 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-self: center;
+    align-items: center;
     gap: 0.4rem;
     width: 450px;
     padding: 1.3rem;
@@ -92,17 +136,20 @@ form {
     border-radius: 15px;
 }
 
-.modal {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .modal input {
     padding: 0.7rem 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 0.9em;
+}
+
+.input {
+    gap: 3px;
+}
+
+.modal form {
+    gap: 12px;
+    align-items: center;
 }
 
 .modal p {
@@ -118,7 +165,6 @@ button {
 }
 
 .btn {
-    display: inline-block;
     padding: 0.8rem 1.4rem;
     font-weight: 700;
     background-color: black;
@@ -126,11 +172,17 @@ button {
     border-radius: 5px;
     text-align: center;
     font-size: 1em;
+    margin: auto auto;
 }
 
 .btn-open {
-    position: absolute;
     bottom: 150px;
+    margin: auto auto;
+}
+
+.btn-open:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: 200ms;
 }
 
 .btn-close {
@@ -138,6 +190,8 @@ button {
     padding: 0.5rem 0.7rem;
     background: #eee;
     border-radius: 50%;
+    align-self: flex-end;
+    margin-top: 12px;
 }
 
 .overlay {
@@ -162,3 +216,34 @@ button {
     display: none;
 }
 
+.submitBtn {
+    background-color: var(--btn-modal-color);
+    padding: 4px 16px;
+    border-radius: 8px;
+    color: var(--header-background-color);
+}
+
+/*footer*/
+
+.footer {
+    grid-row: 4 / 5;
+    background-color: var(--main-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+}
+
+.footer img:hover {
+    rotate: 360deg;
+    transition: 800ms;
+    scale: 1.1;
+}

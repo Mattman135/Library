@@ -34,7 +34,7 @@ function displayBooks() {
     removeAllChildNodes(containerBooks);
     for (let i = 0; i < myLibrary.length; i++) {
         let div = document.createElement("div");
-        div.innerHTML = `${myLibrary[i].author}, ${myLibrary[i].title}, ${myLibrary[i].pages} ,i=${i}`;
+        div.innerHTML = `${myLibrary[i].author} - ${myLibrary[i].title} - ${myLibrary[i].pages} pages`;
         div.dataset.index = i;
         div.setAttribute("class", "book");
 
@@ -48,6 +48,7 @@ function displayBooks() {
             displayBooks();
         })
 
+        btnRemove.setAttribute("class", "removeBtn");
         div.appendChild(btnRemove);
 
         // read or not button
