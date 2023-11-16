@@ -1,124 +1,124 @@
-const inputAuthor = document.getElementById("inputAuthor");
-const inputTitle = document.getElementById("inputTitle");
-const inputPages = document.getElementById("inputPages");
-const inputCheckbox = document.getElementById("checkbox");
+const inputAuthor = document.getElementById("inputAuthor")
+const inputTitle = document.getElementById("inputTitle")
+const inputPages = document.getElementById("inputPages")
+const inputCheckbox = document.getElementById("checkbox")
 
-const submitBookForm = document.getElementById("submitBookForm");
+const submitBookForm = document.getElementById("submitBookForm")
 const containerBooks = document.getElementById("container_books")
 
-var myLibrary = [];
+var myLibrary = []
 
 class Book {
-    constructor(author, title, pages, read) {
-        this.author = author;
-        this.title = title;
-        this.pages = pages;
-        this.read = read;
-    }
+  constructor(author, title, pages, read) {
+    this.author = author
+    this.title = title
+    this.pages = pages
+    this.read = read
+  }
 }
 
 function addBookToLibrary(author, title, pages, read) {
-    let book = new Book(author, title, pages, read);
-    myLibrary.push(book);
-    displayBooks();
+  let book = new Book(author, title, pages, read)
+  myLibrary.push(book)
+  displayBooks()
 }
 
 submitBookForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let author = inputAuthor.value;
-    let title = inputTitle.value;
-    let pages = inputPages.value;
-    let read = inputCheckbox.checked;
-    addBookToLibrary(author, title, pages, read);
+  e.preventDefault()
+  let author = inputAuthor.value
+  let title = inputTitle.value
+  let pages = inputPages.value
+  let read = inputCheckbox.checked
+  addBookToLibrary(author, title, pages, read)
 })
 
 function displayBooks() {
-    removeAllChildNodes(containerBooks);
-    for (let i = 0; i < myLibrary.length; i++) {
-        let div = document.createElement("div");
-        div.innerHTML = `${myLibrary[i].author} - ${myLibrary[i].title} - ${myLibrary[i].pages} pages`;
-        div.dataset.index = i;
-        div.setAttribute("class", "book");
+  removeAllChildNodes(containerBooks)
+  for (let i = 0; i < myLibrary.length; i++) {
+    let div = document.createElement("div")
+    div.innerHTML = `${myLibrary[i].author} - ${myLibrary[i].title} - ${myLibrary[i].pages} pages`
+    div.dataset.index = i
+    div.setAttribute("class", "book")
 
-        // remove button
-        let btnRemove = document.createElement("button");
-        btnRemove.innerHTML = "Remove";
+    // remove button
+    let btnRemove = document.createElement("button")
+    btnRemove.innerHTML = "Remove"
 
-        btnRemove.addEventListener("click", (e) => {
-            myLibrary = removeBook(i);
-            console.log(i);
-            displayBooks();
-        })
+    btnRemove.addEventListener("click", (e) => {
+      myLibrary = removeBook(i)
+      console.log(i)
+      displayBooks()
+    })
 
-        btnRemove.setAttribute("class", "removeBtn");
-        div.appendChild(btnRemove);
+    btnRemove.setAttribute("class", "removeBtn")
+    div.appendChild(btnRemove)
 
-        // read or not button
-        let readBtn = document.createElement("button");
-        
-        let read = myLibrary[i].read;
+    // read or not button
+    let readBtn = document.createElement("button")
 
-        if (read) {
-            readBtn.innerHTML = "Read";
-            readBtn.setAttribute("class", "read");
-        } else {
-            readBtn.innerHTML = "Not read";
-            readBtn.setAttribute("class", "notRead");
-        }
+    let read = myLibrary[i].read
 
-        readBtn.addEventListener("click", (e) => {
-            if (readBtn.innerHTML === "Read") { // if this is read it means read property is true
-                console.log(readBtn.innerHTML);
-                console.log(e);
-                readBtn.innerHTML = "Not read";
-                readBtn.setAttribute("class", "notRead");
-            } else if (readBtn.innerHTML === "Not read") {
-                readBtn.innerHTML = "Read";
-                readBtn.setAttribute("class", "read");
-            }
-        })
-
-        div.appendChild(readBtn);
-
-        containerBooks.appendChild(div);
+    if (read) {
+      readBtn.innerHTML = "Read"
+      readBtn.setAttribute("class", "read")
+    } else {
+      readBtn.innerHTML = "Not read"
+      readBtn.setAttribute("class", "notRead")
     }
+
+    readBtn.addEventListener("click", (e) => {
+      if (readBtn.innerHTML === "Read") {
+        // if this is read it means read property is true
+        console.log(readBtn.innerHTML)
+        console.log(e)
+        readBtn.innerHTML = "Not read"
+        readBtn.setAttribute("class", "notRead")
+      } else if (readBtn.innerHTML === "Not read") {
+        readBtn.innerHTML = "Read"
+        readBtn.setAttribute("class", "read")
+      }
+    })
+
+    div.appendChild(readBtn)
+
+    containerBooks.appendChild(div)
+  }
 }
 
 function removeBook(index) {
-    let ret = [];
-    for (let i = 0; i < myLibrary.length; i++) {
-        if (i !== index) {
-            ret.push(myLibrary[i]);
-        }
+  let ret = []
+  for (let i = 0; i < myLibrary.length; i++) {
+    if (i !== index) {
+      ret.push(myLibrary[i])
     }
-    return ret;
+  }
+  return ret
 }
 
 function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild)
+  }
 }
 
 // modal
 
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const openModalBtn = document.querySelector(".btn-open");
-const closeModalBtn = document.querySelector(".btn-close");
+const modal = document.querySelector(".modal")
+const overlay = document.querySelector(".overlay")
+const openModalBtn = document.querySelector(".btn-open")
+const closeModalBtn = document.querySelector(".btn-close")
 
 const openModal = function () {
-    modal.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-};
+  modal.classList.remove("hidden")
+  overlay.classList.remove("hidden")
+}
 
-openModalBtn.addEventListener("click", openModal);
+openModalBtn.addEventListener("click", openModal)
 
 const closeModal = function () {
-    modal.classList.add("hidden");
-    overlay.classList.add("hidden");
-};
+  modal.classList.add("hidden")
+  overlay.classList.add("hidden")
+}
 
-closeModalBtn.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
-
+closeModalBtn.addEventListener("click", closeModal)
+overlay.addEventListener("click", closeModal)

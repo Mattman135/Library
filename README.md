@@ -8,16 +8,14 @@
 - Bottom should include link to my github
 - There should be an book icon on the tab
 
-
-
 Credit
 
 - Svg image: https://smashicons.com/
 - Modal: - Victor Eke - FreeCodeCamp - https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/
 - Icon: MD Badsha Meah - https://freeicons.io/profile/3335
 
-
 Future extensions
+
 - Add to container with books I have read and with books I want to read
 - Each container should behave like initial one
 - Add a recension button for each book
@@ -26,4 +24,3 @@ Future extensions
 - Make it work for smartphone
 - Include a search engine that searches for books or for example recept. For example if you write bacon all the recept with bacon included will pop up. If you write james bond, james bond books till apppear.
 - You should be able to upload a picture of the book cover.
-

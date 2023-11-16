@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="books.svg">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="books.svg" />
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
+      <div class="header">
+        <h1>My Library</h1>
+        <a href="https://mattman135.github.io/Library/"
+          ><img src="book-stack.png" alt=""
+        /></a>
+      </div>
 
-        <div class="header">
-            <h1>My Library</h1>
-            <a href="https://mattman135.github.io/Library/"><img src="book-stack.png" alt=""></a>
-        </div>
-
-        <div class="divForm">
-            <section class="modal hidden">
-                <button type="button" class="btn-close">⨉</button>
-                <form action="#" id="submitBookForm">
-                    <div class="input">
-                        <input type="text" id="inputAuthor" placeholder="Enter author">
-                        <input type="text" id="inputTitle" placeholder="Enter title">
-                        <input type="number" min="1" id="inputPages" placeholder="Enter number of pages">
-                    </div>
-                    <label class="readOrNotBtn">Have you read it?
-                        <input type="checkbox" id="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                    <button type="submit" class="submitBtn">Submit</button>
-                </form>
-            </section>
-            <div class="overlay hidden"></div>
-            <button type="button" class="btn btn-open">+ Add Book</button>
-        </div>
-
-        <div class="main_content">
-            <div class="container_books" id="container_books">
+      <div class="divForm">
+        <section class="modal hidden">
+          <button type="button" class="btn-close">⨉</button>
+          <form action="#" id="submitBookForm">
+            <div class="input">
+              <input type="text" id="inputAuthor" placeholder="Enter author" required />
+              <input type="text" id="inputTitle" placeholder="Enter title" required />
+              <input type="number" min="1" id="inputPages" placeholder="Enter number of pages" required />
             </div>
-        </div>
-        
-        <div class="footer">© 2023 Mattman135 
-            <a href="https://github.com/Mattman135/Library">
-                <img src="github-mark.png" alt="github-logo">
-            </a>
-        </div>
+            <label class="readOrNotBtn"> 
+              <p>Have you read it?</p>
+              <input type="checkbox" id="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <button type="submit" class="submitBtn">Submit</button>
+          </form>
+        </section>
+        <div class="overlay hidden"></div>
+        <button type="button" class="btn btn-open">+ Add Book</button>
+      </div>
 
+      <div class="main_content">
+        <div class="container_books" id="container_books"></div>
+      </div>
+
+      <div class="footer">
+        © 2023 Mattman135
+        <a href="https://github.com/Mattman135/Library">
+          <img src="github-mark.png" alt="github-logo" />
+        </a>
+      </div>
     </div>
-</body>
+  </body>
 </html>
